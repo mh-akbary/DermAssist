@@ -4,3 +4,4 @@ matplotlib
 pandas
 scikit-image
 jupyter
+scikit-learn
