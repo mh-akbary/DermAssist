@@ -366,14 +366,6 @@ The original PH2 images and reference masks are never overwritten.
 - PCA and KMeans reveal natural groupings in the feature space, useful for further investigation.
 - Without lesion class labels in PH2, a supervised classifier is not trained in this stage.
 
-## Future Work
-
-- Replace the baseline segmentation with a deep learning model (e.g., U-Net or Attention U-Net).
-- Add richer features: color statistics, texture (GLCM, LBP), shape, asymmetry, border irregularity.
-- Add lesion class labels so a supervised classifier (Random Forest, SVM, XGBoost, CNN) can be trained.
-- Add explainability tools such as Grad-CAM or SHAP for clinical interpretation.
-- Extend the classifier to multi-class lesion types (e.g., melanoma vs. nevus vs. basal cell carcinoma).
-
 ## Citation
 
 Mendonça, T., Ferreira, P. M., Marques, J. S., Marcal, A. R. S., & Rozeira, J. (2013).
@@ -384,7 +376,9 @@ PH2 - A dermoscopic image database for research and benchmarking.
 
 This notebook extends the DermAssist preprocessing stage with a complete lesion segmentation, evaluation, and feature analysis pipeline.
 
-The combination of a simple baseline segmentation method, quantitative metrics, and unsupervised feature analysis (PCA and KMeans) gives a solid foundation for the DermAssist system. The results show both the strengths and limitations of classical segmentation, and point to deep learning and labeled data as the next natural step.
+The combination of a simple baseline segmentation method and quantitative metrics (Dice, IoU, Pixel Disagreement) gives a solid foundation for the DermAssist system.
+
+Since the PH2 reference masks do not carry lesion class labels, this notebook does not train a supervised classifier. The work here stays focused on segmentation quality and on extracting features from the detected lesion regions.
 
 ## Author
 
